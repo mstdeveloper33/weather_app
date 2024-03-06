@@ -4,12 +4,24 @@ import 'package:weather_app/widget/location.dart';
 import 'package:weather_app/widget/max_min_sicaklik.dart';
 import 'package:weather_app/widget/sehir_sec.dart';
 import 'package:weather_app/widget/son_guncelleme.dart';
+import 'package:weather_app/widget/weather_services.dart';
 
 // ignore: must_be_immutable
-class WeatherApp extends StatelessWidget {
+class WeatherApp extends StatefulWidget {
   WeatherApp({super.key});
 
+  @override
+  State<WeatherApp> createState() => _WeatherAppState();
+}
+
+class _WeatherAppState extends State<WeatherApp> {
   String kullanicininSectigiSehir = "Ankara";
+
+  @override
+  void initState() {
+    super.initState();
+    WeatherApiClient().getWeatherData();
+  }
 
   @override
   Widget build(BuildContext context) {
