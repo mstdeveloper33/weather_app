@@ -12,11 +12,11 @@ class MaxveMinSicaklikWidget extends StatelessWidget {
         children: [
           Text(
             "Maksimum :" + 24.toString() + "°C",
-            style: TextStyle(fontSize: 20),
+            style: const TextStyle(fontSize: 20),
           ),
           Text(
             "Maksimum :" + 24.toString() + "°C",
-            style: TextStyle(fontSize: 20),
+            style: const TextStyle(fontSize: 20),
           ),
         ],
       ),

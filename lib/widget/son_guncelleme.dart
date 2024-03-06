@@ -6,8 +6,8 @@ class SonGuncellemeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Son Güncelleme : " + TimeOfDay(hour: 20, minute: 35).format(context),
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+      "Son Güncelleme : " + const TimeOfDay(hour: 20, minute: 35).format(context),
+      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
     );
   }
 }

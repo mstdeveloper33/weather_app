@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       home: WeatherApp(),
       theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: Colors.teal.shade200,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
               centerTitle: true,
               backgroundColor: Colors.blueGrey,
               systemOverlayStyle: SystemUiOverlayStyle.light,

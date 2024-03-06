@@ -5,7 +5,7 @@ class HavaDurumuResimWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterLogo(
+    return const FlutterLogo(
       size: 100,
     );
   }

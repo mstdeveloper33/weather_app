@@ -14,7 +14,7 @@ class _SehirSecWidgetState extends State<SehirSecWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Şehir Seç"),
+        title: const Text("Şehir Seç"),
       ),
       body: Form(
         child: Row(
@@ -24,7 +24,7 @@ class _SehirSecWidgetState extends State<SehirSecWidget> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   controller: _textController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: "Şehir",
                       hintText: "Şehir Seç"),
@@ -35,7 +35,7 @@ class _SehirSecWidgetState extends State<SehirSecWidget> {
               onPressed: () {
                 Navigator.pop(context, _textController.text);
               },
-              icon: Icon(Icons.add_location_alt_outlined),
+              icon: const Icon(Icons.add_location_alt_outlined),
             ),
           ],
         ),
