@@ -1,11 +1,17 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:weather_app/models/weather_model.dart';
+
 
 class WeatherApiClient {
-  Future<void> getWeatherData() async {
+  final String city;
+
+  WeatherApiClient({required this.city});
+  Future<List<Weather>?> getWeatherData() async {
     String url =
-        "https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=ankara";
+        "https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=$city";
     const Map<String, dynamic> headers = {
-      'authorization ': 'apikey 0PIRJpwRzV3XgcUzDnHVOc:3MZb9iCBzKPEO2A47AhNFE',
+      'Authorization': 'apikey 0PIRJpwRzV3XgcUzDnHVOc:3MZb9iCBzKPEO2A47AhNFE',
       'content-type': 'application/json'
     };
 
@@ -14,5 +20,14 @@ class WeatherApiClient {
     if (response.statusCode != 200) {
       return Future.error("Bir Sorun oluştu");
     }
+
+    final Map<String, dynamic> responseData = response.data;
+
+    final List<dynamic> list = responseData["result"];
+
+    final List<Weather> weatherList =
+        list.map((e) => Weather.fromJson(e)).toList();
+    print(response.data);
+    return weatherList;
   }
 }

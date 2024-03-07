@@ -20,7 +20,7 @@ class _WeatherAppState extends State<WeatherApp> {
   @override
   void initState() {
     super.initState();
-    WeatherApiClient().getWeatherData();
+    WeatherApiClient(city: '').getWeatherData();
   }
 
   @override
