@@ -1,11 +1,11 @@
-// import 'package:weather_app/locator.dart';
-// import 'package:weather_app/models/weather_model.dart';
-// import 'package:weather_app/widget/weather_services.dart';
+import 'package:weather_app/locator.dart';
+import 'package:weather_app/data/api_service.dart';
+import 'package:weather_app/widget/model.dart';
 
-// class WeatherRepository {
-//   WeatherApiClient weatherApiClient = locator<WeatherApiClient>();
+class WeatherRepository {
+  WeatherApi weatherApiClient = locator<WeatherApi>();
 
-//   Future<Weather?> getWeather(String sehir) async {
-//     return null;
-//   }
-// }
+  Future<Weather?> getWeather(String sehir) async {
+    return null;
+  }
+}

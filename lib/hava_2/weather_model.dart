@@ -1,4 +1,4 @@
-class Weather {
+class WeatherModels {
   final String? gun;
   final String? ikon;
   final String? durum;
@@ -8,10 +8,10 @@ class Weather {
   final String? gece;
   final String? nem;
 
-  Weather(this.gun, this.ikon, this.durum, this.derece, this.min, this.max,
+  WeatherModels(this.gun, this.ikon, this.durum, this.derece, this.min, this.max,
       this.gece, this.nem);
 
-  Weather.fromJson(Map<String, dynamic> json)
+  WeatherModels.fromJson(Map<String, dynamic> json)
       : gun = json["day"],
         ikon = json["icon"],
         durum = json["description"],

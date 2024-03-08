@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/models/weather_model.dart';
-import 'package:weather_app/widget/weather_services.dart';
+import 'package:weather_app/hava_2/weather_model.dart';
+import 'package:weather_app/hava_2/weather_services_version2.dart';
 
 class WeatherView extends StatefulWidget {
   const WeatherView({super.key});
@@ -10,11 +10,11 @@ class WeatherView extends StatefulWidget {
 }
 
 class _WeatherViewState extends State<WeatherView> {
-  List<Weather> _weathers = [];
+  List<WeatherModels> _weathers = [];
 
   void _getWeatherData() async {
     final String city;
-    _weathers = (await WeatherApiClient(city: "mersin").getWeatherData())!;
+   // _weathers = (await WeatherApiClient(city: "mersin").getWeatherData())!;
     setState(() {});
   }
 
@@ -31,7 +31,7 @@ class _WeatherViewState extends State<WeatherView> {
         child: ListView.builder(
           itemCount: _weathers.length,
           itemBuilder: (context, index) {
-            final Weather weather = _weathers[index];
+            final WeatherModels weather = _weathers[index];
             return Container(
               padding: EdgeInsets.all(20),
               margin: EdgeInsets.all(15),

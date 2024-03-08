@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/data/api_service.dart';
 import 'package:weather_app/widget/hava_durumu_resim.dart';
 import 'package:weather_app/widget/location.dart';
 import 'package:weather_app/widget/max_min_sicaklik.dart';
 import 'package:weather_app/widget/sehir_sec.dart';
 import 'package:weather_app/widget/son_guncelleme.dart';
-import 'package:weather_app/widget/weather_services.dart';
+import 'package:weather_app/hava_2/weather_services_version2.dart';
 
 // ignore: must_be_immutable
 class WeatherApp extends StatefulWidget {
@@ -17,10 +18,15 @@ class WeatherApp extends StatefulWidget {
 class _WeatherAppState extends State<WeatherApp> {
   String kullanicininSectigiSehir = "Ankara";
 
+  _getweatherData() async {
+    await WeatherApi().getLocation("");
+    setState(() {});
+  }
+
   @override
   void initState() {
     super.initState();
-    WeatherApiClient(city: '').getWeatherData();
+    _getweatherData();
   }
 
   @override

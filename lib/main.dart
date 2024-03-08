@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:weather_app/widget/weather_app.dart';
-import 'package:weather_app/widget/weather_view.dart';
+import 'package:weather_app/locator.dart';
 
-void main() => runApp(const MyApp());
+import 'package:weather_app/widget/weather_app.dart';
+
+void main() {
+  setupLocator();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,14 +17,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Weather App',
-      home: WeatherView(),
-      // theme: ThemeData.light().copyWith(
-      //     scaffoldBackgroundColor: Colors.teal.shade200,
-      //     appBarTheme: const AppBarTheme(
-      //         centerTitle: true,
-      //         backgroundColor: Colors.blueGrey,
-      //         systemOverlayStyle: SystemUiOverlayStyle.light,
-      //         elevation: 10)),
+      home: WeatherApp(),
+      theme: ThemeData.light().copyWith(
+          scaffoldBackgroundColor: Colors.teal.shade200,
+          appBarTheme: const AppBarTheme(
+              centerTitle: true,
+              backgroundColor: Colors.blueGrey,
+              systemOverlayStyle: SystemUiOverlayStyle.light,
+              elevation: 10)),
     );
   }
 }
