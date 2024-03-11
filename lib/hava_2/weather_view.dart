@@ -25,11 +25,26 @@ class _WeatherViewState extends State<WeatherView> {
     _getWeatherData();
   }
 
+  void _refreshWeatherData() {
+    _getWeatherData();
+  }
+
   @override
   Widget build(BuildContext context) {
     final locationProvider = Provider.of<LocationProvider>(context);
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              child: IconButton(
+                  color: Colors.black,
+                  onPressed: _refreshWeatherData,
+                  icon: Icon(Icons.refresh_rounded)),
+            ),
+          )
+        ],
         title: Text(" -- ${locationProvider.currentLocation} -- "),
       ),
       body: Center(

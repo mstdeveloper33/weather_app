@@ -16,8 +16,8 @@ class WeatherModels {
         ikon = json["icon"],
         durum = json["description"],
         derece = (int.parse(json["degree"].split(".")[0])),
-        min = (int.parse(json["degree"].split(".")[0])),
-        max = (int.parse(json["degree"].split(".")[0])),
-        gece = (int.parse(json["degree"].split(".")[0])),
+        min = (int.parse(json["min"].split(".")[0])),
+        max = (int.parse(json["max"].split(".")[0])),
+        gece = (int.parse(json["night"].split(".")[0])),
         nem = json["humidity"];
 }
