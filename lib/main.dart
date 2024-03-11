@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:weather_app/locator.dart';
+import 'package:weather_app/hava_2/weather_view.dart';
 
-import 'package:weather_app/widget/weather_app.dart';
 
 void main() {
-  setupLocator();
   runApp(MyApp());
 }
 
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Weather App',
-      home: WeatherApp(),
+      home: WeatherView(),
       theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: Colors.teal.shade200,
           appBarTheme: const AppBarTheme(

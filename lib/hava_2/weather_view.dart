@@ -13,8 +13,7 @@ class _WeatherViewState extends State<WeatherView> {
   List<WeatherModels> _weathers = [];
 
   void _getWeatherData() async {
-    final String city;
-   // _weathers = (await WeatherApiClient(city: "mersin").getWeatherData())!;
+    _weathers = (await WeatherServices().getWeatherData())!;
     setState(() {});
   }
 
@@ -22,6 +21,7 @@ class _WeatherViewState extends State<WeatherView> {
   void initState() {
     super.initState();
     _getWeatherData();
+   
   }
 
   @override
